@@ -4,6 +4,8 @@ const LOGIN_USER_KEY = "LOGIN_USER_KEY";
 var baseURL;
 
 baseURL = "https://backend-cyberccafe.herokuapp.com/";
+// baseURL = "https:127.0.1.8000/";
+
 
 const api = axios.create({
   baseURL: baseURL,
@@ -28,9 +30,10 @@ api.interceptors.request.use(
 );
 
 export default class API {
-  //////////////////////////////
-  // USERS
-  /////////////////////////////
+
+
+  
+//  user
 
   signUp = async (user_name, email, password) => {
     const savedPost = await api
@@ -75,9 +78,10 @@ export default class API {
     return posts;
   };
 
-  // ///////////////////////////////////////
-  // Items
-  // ///////////////////////////////////////
+//  item
+
+
+
 
   getItems = async () => {
     let url = "/items/";
@@ -92,9 +96,9 @@ export default class API {
     return items;
   };
 
-  // ///////////////////////////////////////
-  // Carts
-  // //////////////////////////////////////
+  // Cart
+
+
 
   getCarts = async () => {
     const carts = await api
@@ -149,9 +153,7 @@ export default class API {
     return response;
   };
 
-  ////////////////////////////////////////////
-  // Order/Checkout
-  // ////////////////////////////////////////
+// checkout
 
   orderAdd = async (params = {}) => {
     const order = await api
@@ -165,9 +167,7 @@ export default class API {
     return order;
   };
 
-  ///////////////////////////////////////////
-  // Reference Post
-  //////////////////////////////////////////
+  // Refrence 
 
   getPosts = async () => {
     const posts = await api
